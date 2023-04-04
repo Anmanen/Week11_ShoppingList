@@ -29,8 +29,17 @@ public class Storage {
         shoppingItemList.add(sItem);
     }
 
-    public void removeShoppingItem(int key){
-        shoppingItemList.remove(key);
+    public void removeShoppingItem(int index){
+        shoppingItemList.remove(index);
+    }
+
+    public ArrayList<ShoppingItem> sortAlphabetOrder(){
+        shoppingItemList.sort((item1, item2) -> item1.getName().compareTo(item2.getName()));
+        return shoppingItemList;
+    }
+
+    public void sortTimeOrder(){
+
     }
 
 }

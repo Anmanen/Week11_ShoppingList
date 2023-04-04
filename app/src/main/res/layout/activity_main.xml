@@ -36,6 +36,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:onClick="sortAlpha"
         app:layout_constraintStart_toEndOf="@+id/imgDate"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/alpha" />

@@ -24,4 +24,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddShoppingItemActivity.class);
         startActivity(intent);
     }
+
+    public void sortAlpha(View view){
+        Storage.getInstance().sortAlphabetOrder();
+        RecyclerView recyclerView = findViewById(R.id.rwShoppingItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new ShoppingItemInfoAdapter(Storage.getInstance().getShoppingItemList(), this));
+
+    }
+
+    public void sortTime(View view){
+
+    }
 }
