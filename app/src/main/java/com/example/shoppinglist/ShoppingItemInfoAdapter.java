@@ -38,7 +38,16 @@ public class ShoppingItemInfoAdapter extends RecyclerView.Adapter<ShoppingItemIn
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (holder.editName.getVisibility() == View.VISIBLE ) {
+                    Storage.getInstance().getShoppingItemList().get(holder.getAdapterPosition()).setName(holder.editName.getText().toString());
+                    Storage.getInstance().getShoppingItemList().get(holder.getAdapterPosition()).setNote(holder.editNote.getText().toString());
+                    holder.editName.setVisibility(View.GONE);
+                    holder.editNote.setVisibility(View.GONE);
+                    notifyDataSetChanged();
+                } else {
+                    holder.editName.setVisibility(View.VISIBLE);
+                    holder.editNote.setVisibility(View.VISIBLE);
+                }
             }
         });
 

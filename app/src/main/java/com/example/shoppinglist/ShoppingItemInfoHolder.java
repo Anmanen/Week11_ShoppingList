@@ -1,6 +1,7 @@
 package com.example.shoppinglist;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ShoppingItemInfoHolder extends RecyclerView.ViewHolder {
 
-    TextView name;
-    TextView note;
+    TextView name,note;
 
-    ImageView delete;
-    ImageView edit;
+    ImageView delete, edit;
+
+    EditText editName, editNote;
 
     public ShoppingItemInfoHolder(@NonNull View itemView) {
         super(itemView);
@@ -23,6 +24,9 @@ public class ShoppingItemInfoHolder extends RecyclerView.ViewHolder {
 
         delete = itemView.findViewById((R.id.imgDelete));
         edit = itemView.findViewById(R.id.imgEdit);
+
+        editName = itemView.findViewById(R.id.etxtEditName);
+        editNote = itemView.findViewById(R.id.etxtEditNote);
 
     }
 }
