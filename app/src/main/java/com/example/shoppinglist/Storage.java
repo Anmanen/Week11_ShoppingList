@@ -19,6 +19,10 @@ public class Storage {
         return storage;
     }
 
+    public HashMap<Integer, ShoppingItem> getShoppingItemHashMap() {
+        return shoppingItemHashMap;
+    }
+
     public void addShoppingItem(int key, ShoppingItem sItem){
         shoppingItemHashMap.put(key, sItem);
     }

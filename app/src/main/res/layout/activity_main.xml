@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:onClick="openAddShoppingItemView"
         android:text="Lisää ostos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +41,7 @@
         app:srcCompat="@drawable/alpha" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rwShoppingItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
