@@ -1,5 +1,7 @@
 package com.example.shoppinglist;
 
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -33,13 +35,14 @@ public class Storage {
         shoppingItemList.remove(index);
     }
 
-    public ArrayList<ShoppingItem> sortAlphabetOrder(){
+    public void sortAlphabetOrder(){
         shoppingItemList.sort((item1, item2) -> item1.getName().compareTo(item2.getName()));
-        return shoppingItemList;
     }
 
     public void sortTimeOrder(){
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            shoppingItemList.sort((item1, item2) -> item1.getAddingTime().compareTo(item2.getAddingTime()));
+        }
     }
 
 }
