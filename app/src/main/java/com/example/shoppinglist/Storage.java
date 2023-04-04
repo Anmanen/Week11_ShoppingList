@@ -1,10 +1,12 @@
 package com.example.shoppinglist;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Storage {
 
-    private HashMap<Integer, ShoppingItem> shoppingItemHashMap= new HashMap<>();
+    private ArrayList<ShoppingItem> shoppingItemList= new ArrayList<>();
 
     private static Storage storage;
 
@@ -19,12 +21,16 @@ public class Storage {
         return storage;
     }
 
-    public HashMap<Integer, ShoppingItem> getShoppingItemHashMap() {
-        return shoppingItemHashMap;
+    public ArrayList<ShoppingItem> getShoppingItemList() {
+        return shoppingItemList;
     }
 
-    public void addShoppingItem(int key, ShoppingItem sItem){
-        shoppingItemHashMap.put(key, sItem);
+    public void addShoppingItem(ShoppingItem sItem){
+        shoppingItemList.add(sItem);
+    }
+
+    public void removeShoppingItem(int key){
+        shoppingItemList.remove(key);
     }
 
 }

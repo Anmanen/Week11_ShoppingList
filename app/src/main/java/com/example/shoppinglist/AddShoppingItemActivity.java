@@ -20,7 +20,7 @@ public class AddShoppingItemActivity extends AppCompatActivity {
         EditText note =findViewById(R.id.etxtNote);
 
         ShoppingItem sItem = new ShoppingItem(name.getText().toString(), note.getText().toString());
-        Storage.getInstance().addShoppingItem(sItem.getId(), sItem);
+        Storage.getInstance().addShoppingItem(sItem);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
