@@ -1,6 +1,7 @@
 package com.example.shoppinglist;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,10 @@ public class ShoppingItemInfoAdapter extends RecyclerView.Adapter<ShoppingItemIn
                     holder.editNote.setVisibility(View.GONE);
                     notifyDataSetChanged();
                 } else {
+                    holder.editName.setText(holder.name.getText().toString());
+                    holder.editNote.setText(holder.note.getText().toString());
+                    holder.editName.setTextColor(Color.RED);
+                    holder.editNote.setTextColor(Color.RED);
                     holder.editName.setVisibility(View.VISIBLE);
                     holder.editNote.setVisibility(View.VISIBLE);
                 }

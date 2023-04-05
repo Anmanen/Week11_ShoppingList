@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.rwShoppingItems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new ShoppingItemInfoAdapter(Storage.getInstance().getShoppingItemList(), this));
+        setRecyclerView();
     }
 
     public void openAddShoppingItemView(View view){
@@ -28,14 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void sortAlpha(View view){
         Storage.getInstance().sortAlphabetOrder();
-        recyclerView = findViewById(R.id.rwShoppingItems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new ShoppingItemInfoAdapter(Storage.getInstance().getShoppingItemList(), this));
-
+        setRecyclerView();
     }
 
     public void sortTime(View view){
         Storage.getInstance().sortTimeOrder();
+        setRecyclerView();
+    }
+
+    public void setRecyclerView(){
         recyclerView = findViewById(R.id.rwShoppingItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new ShoppingItemInfoAdapter(Storage.getInstance().getShoppingItemList(), this));
